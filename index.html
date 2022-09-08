@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Android.io</title>
+
+	<!-- CUSTOM CSS LINK -->
+	<link rel="stylesheet" type="text/css" href="AndroidClone.css">
+</head>
+<body>
+
+	<header class="header" id="header">
+
+		<nav class="nav container">
+			
+			<a href="#" class="logo">
+				Android<span>.io</span>
+			</a>
+
+			<div class="navbar__menu" id="navbar__menu">
+				
+				<ul class="navbar__list">
+					<li class="navbar__item">
+						<a href="#" class="navbar__link active_link">Home</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#" class="navbar__link">Versions</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#" class="navbar__link">Community</a>
+					</li>
+					<li class="navbar__item">
+						<a href="#" class="navbar__link">About</a>
+					</li>
+				</ul>
+		
+				<!--CLOSE BUTTON-->
+				<!--<div class="close__navbar" id="close__navbar">
+					<div class="close_icon"></div>
+				</div>-->
+
+				<img src="logoHead.png" alt="" class="navbar__img">
+			
+			</div>
+
+			<!--TOGGLE BUTTON -->
+			<div class="toggle" id="toggle">
+				<div class="toggle_icon"></div>
+			</div>	
+		</nav>
+	
+	</header>
+
+	<main class="main">
+
+		<!--------------HOME------------------->
+		<section class="home" id="home">
+			<div class="home-shape-small"></div>
+			<div class="home-shape-large1"></div>
+			<div class="home-shape-large2"></div>
+			<!--<img src="img102.jpg" alt="" class="home-bg-shape">-->
+			<div class="home-container container">
+				<div class="home-info">
+					<h1 class="home-title">
+						<span>Android 12</span><br>
+						Personal, Safe<br>and Effortless
+					</h1>
+					<p class="home-description">
+						The latest Android release delivers even more personal, safe and effortless experience.
+					</p>
+					<a href="#" class="home-button">Explore</a>
+				</div>
+
+				<div class="home-group">
+					<div class="home-imgs">
+						<div class="img-fly">
+							<img src="logoHead.png" alt="">
+						</div>
+						<div class="img-static">
+							<img src="logoBody.png" alt="">
+						</div>
+					</div>
+				
+
+					<div class="home-data">
+						<div>
+							<h2 class="home-data-num">2.6B+</h2>
+							<span class="home-data-sub">Downloads </span>
+						</div>
+
+						<div>
+							<h2 class="home-data-num">180M+</h2>
+							<span class="home-data-sub">Ratings</span>
+						</div>
+						
+						<div>
+							<h2 class="home-data-num">109M+</h2>
+							<span class="home-data-sub">5 Star</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="home-footer">
+					<div>
+						<span  class="footer-title">Current Version</span>
+						<h3 class="footer-num">SnowCone</h3>
+						<span  class="footer-sub">Google</span>
+					</div>
+
+					<div>
+						<span class="footer-title">Tick-Tok-Tick!</span>
+						<div class="footer-time">
+							<div class="footer-counter">
+								<h3 class="footer-num" id="hour">06</h3>
+								<span class="footer-sub">hours</span>
+							</div>
+
+							<div class="footer-counter">
+								<h3 class="footer-num" id="minute">26</h3>
+								<span class="footer-sub">minutes</span>
+							</div>
+
+							<div class="footer-counter">
+								<h3 class="footer-num" id="second">50</h3>
+								<span class="footer-sub">seconds</span>
+							</div>
+						</div>
+					</div>	
+					</div>
+					
+				</div>
+
+			</div>
+
+		</section>
+	</main>
+
+
+
+	<!-- Custom //Script\\ for respnsiveness-->
+
+	<script type="text/javascript">
+		let menuToggle = document.querySelector('.toggle');
+		let closeMenu = document.querySelector('.navbar__menu');
+		let navBarLinks = document.querySelectorAll('.navbar__link');
+
+		
+		menuToggle.onclick = function(){
+			closeMenu.classList.toggle('open');
+			menuToggle.classList.toggle('open');
+		}
+
+		navBarLinks.onclick = function(){
+			closeMenu.classList.remove('open');
+		}
+
+		//Header Background On Scroll
+		let lastScrllTop = 0;
+		let headerShow = document.querySelector('header');
+		window.addEventListener("scroll", function(){
+			let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			if(scrollTop>lastScrllTop){
+				headerShow.classList.add('show');
+			} else {
+				headerShow.classList.remove('show');
+			}
+
+			lastScrllTop = scrollTop;
+		});
+
+
+
+		function clock(){
+
+			var hours = document.getElementById('hour');
+			var minutes = document.getElementById('minute');
+			var seconds = document.getElementById('second');
+
+			var h = new Date().getHours();
+			var m = new Date().getMinutes();
+			var s = new Date().getSeconds();
+		
+			hours.innerHTML = h;
+			minutes.innerHTML = m;
+			seconds.innerHTML = s;
+		}
+
+		var interval = setInterval(clock, 1000);
+	</script>
+</body>
+
+</html>
